@@ -4,7 +4,9 @@ WORKDIR /usr/src/app
 
 USER root
 
-RUN apt-get install wget
+RUN apt-get update
+
+RUN apt-get install -y wget
 
 RUN chown -R 1001:0 /usr/src/app
 
