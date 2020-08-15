@@ -1,4 +1,4 @@
-FROM s390x/websphere-liberty:kernel
+FROM s390x/websphere-liberty:full
 
 WORKDIR /usr/src/app
 
@@ -16,7 +16,6 @@ RUN wget -P /config/dropins/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkin
 
 RUN mkdir jenkins
 
-COPY --chown=1001:0  server.xml /config/
 COPY --chown=1001:0  jvm.options /config/
 
 ARG VERBOSE=true
