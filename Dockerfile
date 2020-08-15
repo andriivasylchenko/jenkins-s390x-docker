@@ -16,4 +16,6 @@ RUN wget -P /config/dropins/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkin
 
 COPY --chown=1001:0  server.xml /config/
 
+ARG VERBOSE=true
+
 RUN configure.sh
