@@ -15,7 +15,7 @@ _jvm.options_ file copied from this repo with settings to:
 * set default _JENKINS_HOME_ location
 * set maximum memory allocation pool (optional)
 
-*Recommended*: If you want to have a persistent Jenkins configuration, mount a persistent storage to _JENKINS_HOME_ as a mount point 
+**Recommended**: If you want to have a persistent Jenkins configuration, mount a persistent storage to _JENKINS_HOME_ as a mount point 
 
 
 ## Dockerfile-kernel
@@ -35,4 +35,4 @@ _configure.sh_ script launched at the end to install features listed in _server.
 
 Argument _OPENJ9_SCC=false_ is set to ignore creation of SCC layer which takes a lot of resources and performs server stop && server start procedures twice.
 
-*Recommended*: If you want to have a persistent Jenkins configuration, mount a persistent storage to _JENKINS_HOME_ as a mount point 
+**Recommended**: If you want to have a persistent Jenkins configuration, mount a persistent storage to _JENKINS_HOME_ as a mount point 
