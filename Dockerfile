@@ -1,34 +1,18 @@
 FROM s390x/websphere-liberty:full
 
-WORKDIR /opt/jenkins
-
 USER root
+
+RUN mkdir -p /opt/jenkins && chown -R 1001:0 /opt/jenkins
 
 RUN apt-get update
 
 RUN apt-get install -y wget
 
-# RUN chown -R 1001:0 /usr/src/app
-
 RUN wget -P /config/dropins/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkins.war
 
 RUN chown -R 1001:0 /config/dropins/jenkins.war
 
-RUN whoami
-
-RUN pwd
-
-RUN ls -la
-
-RUN ls -la /config/dropins/
-
-RUN ls -la /
-
-COPY jvm.options /config/
-
-RUN chown -R 1001:0 /opt/jenkins
-
-RUN ls -la /opt/jenkins
+COPY --chown=1001:0 jvm.options /config/
 
 USER 1001
 
