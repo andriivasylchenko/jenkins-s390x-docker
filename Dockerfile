@@ -10,9 +10,9 @@ RUN apt-get update
 
 RUN apt-get install -y wget
 
-# RUN wget -P /config/dropins/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkins.war
+RUN wget -P /config/dropins/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkins.war
 
-# RUN chown -R 1001:0 /config/dropins/jenkins.war
+RUN chown -R 1001:0 /config/dropins/jenkins.war
 
 COPY --chown=1001:0 jvm.options /config/
 
@@ -24,7 +24,7 @@ ARG VERBOSE=true
 # RUN ls -la configure.sh
 # RUN find . -name configure.sh
 #./opt/ibm/helpers/build/configure.sh
-
+# avoiding server double start & stop as part of creation of a SCC layer
 ARG OPENJ9_SCC=false
 
 RUN configure.sh
