@@ -1,6 +1,6 @@
 FROM s390x/websphere-liberty:full
 
-#WORKDIR /usr/src/app
+WORKDIR /usr/src/app
 
 USER root
 
@@ -22,9 +22,11 @@ RUN ls -la /config/dropins/
 
 RUN ls -la /
 
-RUN --chown=1001:0 /config/dropins/jenkins.war
+#RUN --chown=1001:0 /config/dropins/jenkins.war
 
 COPY --chown=1001:0  jvm.options /config/
+
+RUN --chown=1001:0 -R /opt/ibm/wlp/usr/servers/defaultServer
 
 USER 1001
 
