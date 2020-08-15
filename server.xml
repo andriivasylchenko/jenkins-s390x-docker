@@ -3,6 +3,11 @@
       <feature>restConnector-1.0</feature>
       <feature>appSecurity-2.0</feature>
       <feature>jsp-2.3</feature>
+      <feature>jndi-1.0</feature>
+      <feature>jaxrs-1.1</feature>
+      <feature>el-3.0</feature>
+      <feature>distributedMap-1.0</feature>
+      <feature>servlet-3.1</feature>
     </featureManager>
 
     <variable name="default.http.port" defaultValue="9080"/>
