@@ -1,2 +1,3 @@
 -DJENKINS_HOME=/opt/jenkins
+-Djenkins.install.runSetupWizard=false 
 -Xmx512m
