@@ -22,7 +22,10 @@ ARG VERBOSE=true
 
 # RUN ls -la populate_scc.sh
 # RUN ls -la configure.sh
-RUN find . -name configure.sh
+# RUN find . -name configure.sh
+#./opt/ibm/helpers/build/configure.sh
+
+ARG OPENJ9_SCC=false
 
 RUN configure.sh
 
