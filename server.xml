@@ -12,23 +12,25 @@
 
     <variable name="default.http.port" defaultValue="9080"/>
 
-    <webApplication location="jenkins.war">
+    <webApplication location="jenkins.war" />
+    
+<!--     <webApplication location="jenkins.war">
       <application-bnd>
         <security-role name="admin">
           <user name="jenkins-admin" />
           <group name="jenkins-admins" />
         </security-role>
       </application-bnd>
-    </webApplication>
+    </webApplication> -->
 
     <httpEndpoint host="*" httpPort="${default.http.port}" id="defaultHttpEndpoint"/>
     
-    <basicRegistry id="basic" realm="customRealm">
+<!--     <basicRegistry id="basic" realm="customRealm">
       <user name="jenkins-admin" password="test" />
       <group name="jenkins-admins">
         <member name="jenkins-admin" />
       </group>
-    </basicRegistry>
+    </basicRegistry> -->
     
 
 
