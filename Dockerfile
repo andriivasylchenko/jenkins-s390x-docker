@@ -1,4 +1,4 @@
-FROM s390x/websphere-liberty:kernel
+FROM s390x/websphere-liberty:full
 
 WORKDIR /usr/src/app
 
