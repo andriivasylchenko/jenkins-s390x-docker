@@ -26,11 +26,17 @@ RUN ls -la /
 
 #RUN --chown=1001:0 /config/dropins/jenkins.war
 
-COPY --chown=1001:0  jvm.options /config/
+#COPY --chown=1001:0  jvm.options /config/
 
-RUN --chown=1001:0 -R /opt/ibm/wlp/usr/servers/defaultServer
+COPY jvm.options /config/
+
+RUN chown -R 1001:0 /opt/ibm/wlp/usr/servers/defaultServer
 
 RUN ls -la /opt/ibm/wlp/usr/servers/defaultServer
+
+RUN chown -R 1001:0 /usr/srv/app/
+
+RUN ls -la /usr/srv/app/
 
 USER 1001
 
