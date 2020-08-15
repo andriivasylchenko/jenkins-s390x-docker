@@ -20,6 +20,8 @@ COPY --chown=1001:0 server.xml /config/
 
 ARG VERBOSE=true
 
+RUN ls -la
+
 RUN configure.sh
 
 USER 1001
