@@ -1,2 +1,3 @@
 -DJENKINS_HOME=/usr/src/app/jenkins
 -Xmx512m
+-Xscmx128m
