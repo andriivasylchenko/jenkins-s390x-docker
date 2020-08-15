@@ -4,7 +4,7 @@
     </featureManager>
 
     <variable name="default.http.port" defaultValue="9080"/>
-    <variable name="default.https.port" defaultValue="9443"/>
+    <variable name="default.https.port" defaultValue="-1"/>
 
 
     <httpEndpoint host="*" httpPort="${default.http.port}"
