@@ -11,25 +11,25 @@
     </featureManager>
 
     <variable name="default.http.port" defaultValue="9080"/>
-    <variable name="default.https.port" defaultValue="-1"/>
 
     <webApplication location="jenkins.war">
       <application-bnd>
         <security-role name="admin">
-          <user name="jenkins-admin"/>
-          <group name="jenkins-admins"/>
+          <user name="jenkins-admin" />
+          <group name="jenkins-admins" />
         </security-role>
       </application-bnd>
     </webApplication>
 
-    <httpEndpoint host="*" httpPort="${default.http.port}"
-        httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
+    <httpEndpoint host="*" httpPort="${default.http.port}" id="defaultHttpEndpoint"/>
     
-    <basicRegistry realm="jenkins">
-      <user name="jenkins-admin" password="ATAAAAAI5v7u/UFNAotAAAAAIPphSgYUGQrZ0OrJX5hhsdHkzzIK8/MQN4blNSkv0gZm"/>
+    <basicRegistry id="basic" realm="customRealm">
+      <user name="jenkins-admin" password="test" />
       <group name="jenkins-admins">
         <member name="jenkins-admin" />
       </group>
     </basicRegistry>
+    
+
 
 </server>
