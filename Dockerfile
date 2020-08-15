@@ -18,6 +18,8 @@ COPY --chown=1001:0 jvm.options /config/
 
 COPY --chown=1001:0 server.xml /config/
 
+ARG VERBOSE=true
+
 RUN configure.sh
 
 USER 1001
