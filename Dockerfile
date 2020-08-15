@@ -28,6 +28,8 @@ COPY --chown=1001:0  jvm.options /config/
 
 RUN --chown=1001:0 -R /opt/ibm/wlp/usr/servers/defaultServer
 
+RUN ls -la /opt/ibm/wlp/usr/servers/defaultServer
+
 USER 1001
 
 # RUN wget -P /config/dropins/ https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
