@@ -16,7 +16,7 @@ RUN wget -P /config/dropins/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkin
 
 RUN whoami
 
-RUN PWD
+RUN pwd
 
 RUN ls -la /config/dropins/
 
