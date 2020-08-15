@@ -11,7 +11,7 @@ This repository contains 2 docker files to use within Openshift environment to c
 
 Uses a full (pre-packaged with features) image of [WebSphere Application Server Liberty Profile](https://hub.docker.com/r/s390x/websphere-liberty) (usually called wlp or liberty) for s390x. Jenkins 2.235.4 war file downloaded from [official location](https://www.jenkins.io/download/) and placed into _dropins_ folder that is monitored for applications by default.
 _jvm.options_ file copied from this repo with settings to:
-* bypass initial _Unlock Jenkins_ screen (which forses users to get temp password from container runtime)
+* bypass initial _Unlock Jenkins_ screen (which forces users to get temp password from container runtime)
 * set default _JENKINS_HOME_ location
 * set maximum memory allocation pool (optional)
 
@@ -22,7 +22,7 @@ _jvm.options_ file copied from this repo with settings to:
 
 Uses a kernel (base) image of [WebSphere Application Server Liberty Profile](https://hub.docker.com/r/s390x/websphere-liberty) (usually called wlp or liberty) for s390x and requires configuration based on provided _server.xml_. Jenkins 2.235.4 war file downloaded from [official location](https://www.jenkins.io/download/) and placed into _apps_ folder that is monitored for applications by default.
 _jvm.options_ file copied from this repo with settings to:
-* bypass initial _Unlock Jenkins_ screen (which forses users to get temp password from container runtime)
+* bypass initial _Unlock Jenkins_ screen (which forces users to get temp password from container runtime)
 * set default _JENKINS_HOME_ location
 * set maximum memory allocation pool (optional)
 
