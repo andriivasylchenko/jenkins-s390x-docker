@@ -12,7 +12,7 @@ RUN chown -R 1001:0 /usr/src/app
 
 USER 1001
 
-RUN wget http://mirrors.jenkins.io/war-stable/2.235.4/jenkins.war /config/dropins/
+RUN wget -P /config/dropins/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkins.war
 
 COPY --chown=1001:0  server.xml /config/
 
