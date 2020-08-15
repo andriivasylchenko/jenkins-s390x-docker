@@ -2,7 +2,7 @@ FROM s390x/websphere-liberty:full
 
 USER root
 
-RUN mkdir -p /opt/jenkins && chdom chmod g+rwx /opt/jenkins
+RUN mkdir -p /opt/jenkins && chmod g+rwx /opt/jenkins
 
 RUN apt-get update
 
