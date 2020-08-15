@@ -1,2 +1,2 @@
--DJENKINS_HOME=/config/jenkins
+-DJENKINS_HOME=/opt/jenkins
 -Xmx512m
