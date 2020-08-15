@@ -2,6 +2,7 @@
     <featureManager>
       <feature>restConnector-1.0</feature>
       <feature>appSecurity-2.0</feature>
+      <feature>jsp-2.3</feature>
     </featureManager>
 
     <variable name="default.http.port" defaultValue="9080"/>
