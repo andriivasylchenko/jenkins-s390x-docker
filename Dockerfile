@@ -14,6 +14,14 @@ RUN mkdir -p /jenkins && chown -R 1001:0 /jenkins
 
 RUN wget -P /config/dropins/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkins.war
 
+RUN whoami
+
+RUN PWD
+
+RUN ls -la /config/dropins/
+
+RUN ls -la /
+
 RUN --chown=1001:0 /config/dropins/jenkins.war
 
 COPY --chown=1001:0  jvm.options /config/
