@@ -20,7 +20,7 @@ COPY --chown=1001:0 server.xml /config/
 
 ARG VERBOSE=true
 
-RUN ls -la populate_scc.sh
+# RUN ls -la populate_scc.sh
 RUN ls -la configure.sh
 
 RUN configure.sh
