@@ -8,7 +8,7 @@ RUN apt-get update
 
 RUN apt-get install -y wget
 
-RUN mkdir -p /jenkins && chown -R 1001:0 /jenkins
+RUN mkdir -p jenkins && chown -R 1001:0 jenkins
 
 # RUN chown -R 1001:0 /usr/src/app
 
@@ -17,6 +17,8 @@ RUN wget -P /config/dropins/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkin
 RUN whoami
 
 RUN pwd
+
+RUN ls -la
 
 RUN ls -la /config/dropins/
 
