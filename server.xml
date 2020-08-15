@@ -28,7 +28,7 @@
     <basicRegistry realm="jenkins">
       <user name="jenkins-admin" password="ATAAAAAI5v7u/UFNAotAAAAAIPphSgYUGQrZ0OrJX5hhsdHkzzIK8/MQN4blNSkv0gZm"/>
       <group name="jenkins-admins">
-        <member name="jenkins-admin">
+        <member name="jenkins-admin" />
       </group>
     </basicRegistry>
 
