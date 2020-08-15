@@ -1,2 +1,2 @@
--DJENKINS_HOME=/usr/srv/app/jenkins
+-DJENKINS_HOME=/opt/jenkins
 -Xmx512m
