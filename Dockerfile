@@ -4,8 +4,6 @@ WORKDIR /usr/src/app
 
 USER root
 
-RUN yum install -y wget
-
 RUN chown -R 1001:0 /usr/src/app
 
 USER 1001
