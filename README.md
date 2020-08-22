@@ -40,6 +40,6 @@ Argument _OPENJ9_SCC=false_ is set to ignore creation of SCC layer which takes a
 
 ## Dockerfile-kernel-addons
 
-Same as **Dockerfile-kernel-addons** + additionally installing:
+Same as [Dockerfile-kernel-addons](https://github.com/andriivasylchenko/s390x-jenkins-l1cc-openshift/blob/master/README.md#dockerfile-kernel) + additionally installing:
 * NodeJS + NPM
 * Git
