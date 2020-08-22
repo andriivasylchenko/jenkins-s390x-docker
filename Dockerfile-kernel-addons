@@ -1,0 +1,45 @@
+# Using kernel WAS Libery image
+FROM s390x/websphere-liberty:kernel
+
+# Image by default operates by non-root user, so in order to do configuration we need to use root
+USER root
+
+# Creating JENKINS_HOME folder. Can be ignored/replaced by mounted storage for persistence
+RUN mkdir -p /opt/jenkins && chmod g+rwx /opt/jenkins
+
+# Updating repo's
+RUN apt-get update
+
+# wget required to download jenkins from web
+RUN apt-get install -y wget
+
+# installing NodeJS
+RUN wget https://nodejs.org/dist/v12.18.3/node-v12.18.3-linux-s390x.tar.xz .
+RUN tar -xvf node-v12.18.3-linux-s390x.tar.xz 
+MOVE --chown=1001:0 node-v12.18.3-linux-s390x /usr/local/lib/nodejs
+RUN rm node-v12.18.3-linux-s390x.tar.xz
+
+# installing git
+RUN apt-get install -y git
+
+# Downloading jenkins generic java package. Other versions here - https://www.jenkins.io/download/. If no further configuration will be needed, you can use /config/dropins folder instead
+RUN wget -P /config/apps/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkins.war
+
+# Changing permissions to allow access for non-root users within the group
+RUN chmod g+rwx /config/apps/jenkins.war
+
+# Copying jvm.options and server.xml from this repo.
+COPY --chown=1001:0 jvm.options /config/
+COPY --chown=1001:0 server.xml /config/
+
+# Verbose argument will show you the output of configure.sh script
+ARG VERBOSE=true
+
+# Avoiding server double start & stop as part of creation of a SCC layer. Requires a lot of resources in case of true value
+ARG OPENJ9_SCC=false
+
+# Configuring server based on provided server.xml
+RUN configure.sh
+
+# Switching back to non-root user
+USER 1001
