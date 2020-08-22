@@ -17,7 +17,7 @@ RUN apt-get install -y wget xz-utils git
 
 # Installing NodeJS
 ARG NODE_VERSION=12.18.3
-RUN wget -O /temp/ https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-s390x.tar.xz
+RUN wget -P /temp/ https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-s390x.tar.xz
 RUN tar -xf node-v${NODE_VERSION}-linux-s390x.tar.xz -C /temp/nodejs
 COPY --chown=1001:0 /temp/nodejs/* /usr/local/lib/nodejs/
 ENV NODE_PATH /usr/local/lib/nodejs/lib/node_modules
