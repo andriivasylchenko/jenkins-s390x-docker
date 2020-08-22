@@ -17,10 +17,10 @@ WORKDIR /temp
 
 # installing NodeJS
 ARG NODE_VERSION=12.18.3
-RUN wget https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-s390x.tar.xz .
-RUN tar -xvf ./node-v${NODE_VERSION}-linux-s390x.tar.xz
-MOVE --chown=1001:0 node-v${NODE_VERSION}-linux-s390x.tar.xz /usr/local/lib/nodejs
-RUN rm node-v${NODE_VERSION}-linux-s390x.tar.xz
+RUN wget -P /temp https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-s390x.tar.xz
+RUN tar -xvf /temp/node-v${NODE_VERSION}-linux-s390x.tar.xz /temp/nodejs
+MOVE --chown=1001:0 /temp/nodejs /usr/local/lib/nodejs
+RUN rm /temp/node-v${NODE_VERSION}-linux-s390x.tar.xz
 
 # installing git
 RUN apt-get install -y git
