@@ -16,9 +16,11 @@ RUN apt-get install -y wget xz-utils git
 # Installing NodeJS
 ARG NODE_VERSION=12.18.3
 RUN wget https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-s390x.tar.xz
-RUN tar -xf node-v${NODE_VERSION}-linux-s390x.tar.xz -C nodejs
-MOVE --chown=1001:0 nodejs /usr/local/lib/nodejs
+RUN tar -xf node-v${NODE_VERSION}-linux-s390x.tar.xz
+MOVE --chown=1001:0 node-v${NODE_VERSION}-linux-s390x /usr/local/lib/nodejs
 RUN rm node-v${NODE_VERSION}-linux-s390x.tar.xz
+ENV NODE_PATH /usr/local/lib/nodejs/lib/node_modules
+ENV PATH /usr/local/lib/nodejs/bin:$PATH
 
 # Downloading jenkins generic java package. Other versions here - https://www.jenkins.io/download/. If no further configuration will be needed, you can use /config/dropins folder instead
 RUN wget -P /config/apps/ http://mirrors.jenkins.io/war-stable/2.235.4/jenkins.war
