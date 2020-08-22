@@ -1,8 +1,6 @@
 # Using kernel WAS Libery image
 FROM s390x/websphere-liberty:kernel
 
-WORKDIR /temp
-
 # Image by default operates by non-root user, so in order to do configuration we need to use root
 USER root
 
@@ -17,9 +15,10 @@ RUN apt-get install -y wget xz-utils git
 
 # Installing NodeJS
 ARG NODE_VERSION=12.18.3
-RUN wget -P /temp/ https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-s390x.tar.xz
-RUN mkdir /temp/nodejs && tar -xf /temp/node-v${NODE_VERSION}-linux-s390x.tar.xz -C /temp/nodejs
-COPY --chown=1001:0 /temp/nodejs/* /usr/local/lib/nodejs/
+RUN https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-s390x.tar.xz
+RUN tar -xf /temp/node-v${NODE_VERSION}-linux-s390x.tar.xz
+RUN mv node-v${NODE_VERSION}-linux-s390x /usr/local/lib/nodejs
+RUN chmod g+rwx /usr/local/lib/nodejs
 ENV NODE_PATH /usr/local/lib/nodejs/lib/node_modules
 ENV PATH /usr/local/lib/nodejs/bin:$PATH
 
