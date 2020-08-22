@@ -1,5 +1,5 @@
 # Using kernel WAS Libery image
-#FROM s390x/websphere-liberty:kernel
+FROM s390x/websphere-liberty:kernel
 
 # Image by default operates by non-root user, so in order to do configuration we need to use root
 USER root
