@@ -36,3 +36,10 @@ _configure.sh_ script launched at the end to install features listed in _server.
 Argument _OPENJ9_SCC=false_ is set to ignore creation of SCC layer which takes a lot of resources and performs server stop && server start procedures twice.
 
 **Recommended**: If you want to have a persistent Jenkins configuration, mount a persistent storage to _JENKINS_HOME_ location as a mount point. In _jvm.options_ it is set to _/opt/jenkins_  
+
+
+## Dockerfile-kernel-addons
+
+Same as **Dockerfile-kernel-addons** + additionally installing:
+* NodeJS + NPM
+* Git
