@@ -19,7 +19,7 @@ WORKDIR /temp
 ARG NODE_VERSION=12.18.3
 RUN wget -P /temp https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-s390x.tar.xz
 RUN ls /temp
-RUN PWD
+RUN pwd
 RUN tar -xf /temp/node-v${NODE_VERSION}-linux-s390x.tar.xz -C /temp/nodejs
 MOVE --chown=1001:0 /temp/nodejs /usr/local/lib/nodejs
 RUN rm /temp/node-v${NODE_VERSION}-linux-s390x.tar.xz
