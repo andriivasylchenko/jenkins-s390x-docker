@@ -2,7 +2,6 @@
     <featureManager>
       <feature>restConnector-1.0</feature>
       <feature>appSecurity-2.0</feature>
-      <feature>transportSecurity-1.0</feature>
       <feature>jsp-2.3</feature>
       <feature>jndi-1.0</feature>
       <feature>jaxrs-1.1</feature>
@@ -12,12 +11,9 @@
     </featureManager>
 
     <variable name="default.http.port" defaultValue="9080"/>
-    <variable name="default.https.port" defaultValue="9443"/>
 
     <webApplication location="jenkins.war" />
     
-    <httpEndpoint host="*" httpPort="${default.http.port}" httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
-    
-    <keyStore id="defaultKeyStore" password="{xor}Dg4uLm5tbGs=" />
+    <httpEndpoint host="*" httpPort="${default.http.port}" id="defaultHttpEndpoint"/>
 
 </server>
