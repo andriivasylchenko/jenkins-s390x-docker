@@ -16,7 +16,7 @@
 
     <webApplication location="jenkins.war" />
     
-    <httpEndpoint host="*" httpPort="${default.http.port}" id="defaultHttpEndpoint"/>
+    <httpEndpoint host="*" httpPort="${default.http.port}" httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
     
     <keyStore id="defaultKeyStore" password="{xor}Dg4uLm5tbGs=" />
 
