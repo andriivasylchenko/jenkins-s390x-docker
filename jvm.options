@@ -3,3 +3,4 @@
 -Xmx768m
 -Dfile.encoding=UTF-8
 -Dclient.encoding.override=UTF-8
+-Dcom.sun.net.ssl.checkRevocation=false
