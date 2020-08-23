@@ -11,9 +11,10 @@
     </featureManager>
 
     <variable name="default.http.port" defaultValue="9080"/>
+    <variable name="default.https.port" defaultValue="9443"/>
 
     <webApplication location="jenkins.war" />
     
-    <httpEndpoint host="*" httpPort="${default.http.port}" id="defaultHttpEndpoint"/>
+    <httpEndpoint host="*" httpPort="${default.http.port}" httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
 
 </server>
