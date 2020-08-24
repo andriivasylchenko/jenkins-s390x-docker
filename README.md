@@ -14,6 +14,7 @@ _jvm.options_ file copied from this repo with settings to:
 * bypass initial _Unlock Jenkins_ screen (which forces users to get temp password from container runtime)
 * set default _JENKINS_HOME_ location
 * set maximum memory allocation pool (optional)
+* avoid non-UTF text related errors (optional)
 
 **Recommended**: If you want to have a persistent Jenkins configuration, mount a persistent storage to _JENKINS_HOME_ location as a mount point. In _jvm.options_ it is set to _/opt/jenkins_ 
 
@@ -25,6 +26,7 @@ _jvm.options_ file copied from this repo with settings to:
 * bypass initial _Unlock Jenkins_ screen (which forces users to get temp password from container runtime)
 * set default _JENKINS_HOME_ location
 * set maximum memory allocation pool (optional)
+* avoid non-UTF text related errors (optional)
 
 _server.xml_ file copied from this repo with settings to:
 * initialize jenkins.war from _apps_ folder
