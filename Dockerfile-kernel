@@ -32,5 +32,8 @@ ARG OPENJ9_SCC=false
 # Configuring server based on provided server.xml
 RUN configure.sh
 
+# Exposing default http port
+EXPOSE 9080
+
 # Switching back to non-root user
 USER 1001
