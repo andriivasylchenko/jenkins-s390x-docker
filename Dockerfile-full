@@ -22,5 +22,8 @@ RUN chmod g+rwx /config/dropins/jenkins.war
 # Copying jvm.options from this repo.
 COPY --chown=1001:0 jvm.options /config/
 
+# Exposing default http port
+EXPOSE 9080
+
 # Switching back to non-root user
 USER 1001
