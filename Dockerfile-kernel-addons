@@ -43,5 +43,8 @@ RUN chmod g+rwx /usr/local/lib/nodejs
 ENV NODE_PATH /usr/local/lib/nodejs/lib/node_modules
 ENV PATH /usr/local/lib/nodejs/bin:$PATH
 
+# Exposing default http port
+EXPOSE 9080
+
 # Switching back to non-root user
 USER 1001
