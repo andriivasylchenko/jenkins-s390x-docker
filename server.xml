@@ -13,7 +13,7 @@
 
     <applicationManager autoExpand="true"/>
 
-    <webApplication location="jenkins.war" />
+    <webApplication contextRoot="/" location="jenkins.war" />
 
     <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443" />
 
