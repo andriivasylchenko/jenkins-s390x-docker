@@ -1,4 +1,8 @@
 -DJENKINS_HOME=/opt/jenkins
+-DhttpPort=9080
+-DhttpsPort=9443
+-DhttpsKeyStore=resources/security/key.jks
+-DhttpsKeyStorePassword=defaultPWD
 -Djenkins.install.runSetupWizard=false
 -Xmx768m
 -Dfile.encoding=UTF-8
