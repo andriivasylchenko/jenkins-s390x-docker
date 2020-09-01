@@ -43,8 +43,8 @@ RUN chmod g+rwx /usr/local/lib/nodejs
 ENV NODE_PATH /usr/local/lib/nodejs/lib/node_modules
 ENV PATH /usr/local/lib/nodejs/bin:$PATH
 
-# Exposing default http and https ports
-EXPOSE 9080 9443
+# Exposing default http and https ports together with remote agents port
+EXPOSE 9080 9443 9090
 
 # Switching back to non-root user
 USER 1001
